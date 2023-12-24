@@ -28,19 +28,6 @@ export class AppComponent implements OnInit {
   origin: LatLng = [-12.870953931835821, -39.52701337549884];
   destination: LatLng = [-22.75009265272729, -47.3352230711642];
 
-  // options = {
-  //   layers: [
-  //     tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  //       maxZoom: 4,
-  //       minZoom: 4
-  //     }),
-  //   ],
-  //   zoom: 4,
-  //   center: latLng(...this.destination),
-  //   // center: latLng(46.879966, -121.726909)
-  // };
-  // layers: (Marker<any> | Polyline<any, any>)[] = [];
-
   ngOnInit(): void {
     const drivingRoutes: any = { resourceSets: [
       {
@@ -4938,14 +4925,6 @@ export class AppComponent implements OnInit {
         ]
       }
     ]}
-    // this.http
-    //   .get<DrivingRoute>(
-    //     `https://dev.virtualearth.net/REST/V1/Routes/Driving?wp.0=${this.origin[0]},${this.origin[1]}&wp.1=${this.destination[0]},${this.destination[1]}&key=AluAyimJUs8T8y8B6MiD872EamXF2dOmyJc5qBuqgV-OyT67ohl-HcVw8E69skyM`
-    //   )
-    //   .subscribe((data) => {
-    //     console.log(data)
-    //     this.drawMapAndRoute(data);
-    //   });
     this.drawMapAndRoute(drivingRoutes)
   }
 
@@ -4998,35 +4977,4 @@ export class AppComponent implements OnInit {
       )
     );
   }
-
-  // handleClick(e: any) {
-  //   if (!this.origin) {
-  //     this.origin = e.latlng;
-  //     this.layers.push(
-  //       marker([this.origin.lat, this.origin.lng], {
-  //         icon: icon({
-  //           ...Icon.Default.prototype.options,
-  //           iconUrl: 'assets/marker-icon.png',
-  //           iconRetinaUrl: 'assets/marker-icon-2x.png',
-  //           shadowUrl: 'assets/marker-shadow.png',
-  //         }),
-  //       })
-  //     );
-  //   } else if (!this.destination) {
-  //     this.destination = e.latlng;
-  //     this.layers.push(
-  //       marker([this.destination.lat, this.destination.lng], {
-  //         icon: icon({
-  //           ...Icon.Default.prototype.options,
-  //           iconUrl: 'assets/marker-icon.png',
-  //           iconRetinaUrl: 'assets/marker-icon-2x.png',
-  //           shadowUrl: 'assets/marker-shadow.png',
-  //         }),
-  //       })
-  //     );
-  //     this.layers.push(
-  //       polyline([this.origin, this.destination], { color: 'red' })
-  //     );
-  //   }
-  // }
 }
