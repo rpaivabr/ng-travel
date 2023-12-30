@@ -1,0 +1,18 @@
+@if (mapWithDrivingRoute) {
+    <div
+      style="height: 100vh"
+      leaflet
+      [leafletFitBounds]="mapWithDrivingRoute.bounds"
+      [leafletOptions]="mapWithDrivingRoute.options"
+      [leafletLayers]="mapWithDrivingRoute.layers"
+    ></div>
+    
+    <footer class="footer">
+      <mat-progress-bar class="example-margin" [value]="50" />
+      <div class="footer-info">
+        <span>Última Atualização: 03/01/24 14:00</span>
+        <span>1000/1900km</span>
+      </div>
+    </footer>
+    }
+    
